@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        var ponteiro = 0
+        var ultimoValue = 0
+        var widget = ""
+        function clicar(name){
+            widget = name
+            ponteiro = event.pageX
+        }
+
+        function move(){
+            var tamanhoTotalBarra = (document.getElementById(widget).scrollHeight)*0.1
+            if (event.buttons == 1){
+                if (ultimoValue > event.pageX){
+                    document.getElementById(widget).scrollLeft += tamanhoTotalBarra
+                }else if(ultimoValue < event.pageX){
+                    document.getElementById(widget).scrollLeft -= tamanhoTotalBarra
+                }
+                ultimoValue = event.pageX
+            }
+        }
+
+        function teste(){
+            document.getElementById(widget).style.cursor = "pointer"
+
+        }
+
+    </script>
+
+    <header class="cabecalho-pagina">
+        <div class="logo">
+            <h1>LOGO</h1>
+        </div>
+
+        <div id="usuario">
+            <i class="fa-regular fa-bell fa-xl" id="widget"></i>
+            <i class="fa-regular fa-heart fa-xl" style="--fa-primary-color: red;" id="widget"></i>
+            <i class="fa-solid fa-clock-rotate-left fa-xl" style="--fa-primary-color: red;" id="widget"></i>
+            <span id="texto-cabecalho">
+                <p>Clique para</p>
+                <p>fazer Login</p>
+            </span>
+            <img src="download.jfif" alt="">
+        </div>
+    </header>
+    
+    <section class="busca">
+        <section class="texto-busca">
+            <h1>
+                Peça o que quiser
+            </h1>
+            <h4>e pode relaxa, nós fazemos o resto por você </h2>
+        </section>
+        <section class="busca-completa">
+            <div class="fundo-busca">
+                <input type="text" placeholder="Busque sua comida" id="input">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </section>
+    </section>
+
+    <section class="section-rolagem-1" id="ofertas-semanais">
+        <span class="titulo-rolagem-1" id="texto-semanais">
+            <h1>
+                Ofertas da Semana
+            </h1>
+            <h2>
+                Todos os decontos, são por tempo limitado
+            </h2>
+        </span>
+        <div class="fundo-rolagem-1" id="imagens-semanais" onmousedown="clicar('imagens-semanais')" onmousemove="move()">
+
+            <div class="fundo-imagem-rolagem-1" id="oferta-1">
+                <img class="imagem-rolagem-1" id="imagem-oferta-1">
+            </div>
+
+            <div class="fundo-imagem-rolagem-1" id="oferta-2">
+                <img class="imagem-rolagem-1" id="imagem-oferta-2">
+            </div>
+
+            <div class="fundo-imagem-rolagem-1" id="oferta-3">
+                <img class="imagem-rolagem-1" id="imagem-oferta-3">
+            </div>
+
+            <div class="fundo-imagem-rolagem-1" id="oferta-4">
+                <img class="imagem-rolagem-1" id="imagem-oferta-4">
+            </div>
+
+            <div class="fundo-imagem-rolagem-1" id="oferta-4">
+                <img class="imagem-rolagem-1" id="imagem-oferta-4">
+            </div>
+            <div class="fundo-imagem-rolagem-1" id="oferta-5">
+                <img class="imagem-rolagem-1" id="imagem-oferta-5">
+            </div>
+            <div class="fundo-imagem-rolagem-1" id="oferta-6">
+                <img class="imagem-rolagem-1" id="imagem-oferta-6">
+            </div>
+        </div>
+    </section>
+
+    <section class="section-rolagem-1" id="categorias">
+        <span class="titulo-rolagem-1" id="categorias-texto">
+            <h1>
+                Categorias
+            </h1>
+        </span>
+        <div class="fundo-rolagem-1" id="categorias-imagem-fundo" onmousedown="clicar('categorias-imagem-fundo')" onmousemove="move()">
+            <div class="fundo-imagem-rolagem-1" id="categoria-1">
+                <img class="imagem-rolagem-1-large" id="categoria-imagem-1">
+            </div>
+
+            <div class="fundo-imagem-rolagem-1" id="categoria-2">
+                <img class="imagem-rolagem-1-large" id="categoria-imagem-2">
+            </div>
+
+            <div class="fundo-imagem-rolagem-1" id="categoria-3">
+                <img class="imagem-rolagem-1-large" id="categoria-imagem-3">
+            </div>
+
+            <div class="fundo-imagem-rolagem-1" id="categoria-4">
+                <img class="imagem-rolagem-1-large" id="categoria-imagem-4">
+            </div>
+
+            <div class="fundo-imagem-rolagem-1" id="categoria-5">
+                <img class="imagem-rolagem-1-large" id="categoria-imagem-5">
+            </div>
+
+            <div class="fundo-imagem-rolagem-1" id="categoria-5">
+                <img class="imagem-rolagem-1-large" id="categoria-imagem-5">
+            </div>
+
+            <div class="fundo-imagem-rolagem-1" id="categoria-6">
+                <img class="imagem-rolagem-1-large" id="categoria-imagem-6">
+            </div>
+        </div>
+    </section>
+
+    <section class="section-rolagem-1" id="ofertas-melhores">
+        <span class="titulo-rolagem-1" id="texto-melhores">
+            <h1>
+                O melhor dos Melhores
+            </h1>
+            <h2>
+                Confira as melhores ofertas, dos nossos principais contribuintes
+            </h2>
+        </span>
+        <div class="fundo-rolagem-1" id="imagens-melhores" onmousedown="clicar('imagens-melhores')" onmousemove="move()">
+            <div class="fundo-imagem-rolagem-1" id="melhor-1">
+                <img class="imagem-rolagem-1" id="imagem-melhor-1">
+            </div>
+
+            <div class="fundo-imagem-rolagem-1" id="melhor-2">
+                <img class="imagem-rolagem-1" id="imagem-melhor-2">
+            </div>
+
+            <div class="fundo-imagem-rolagem-1" id="melhor-3">
+                <img class="imagem-rolagem-1" id="imagem-melhor-3">
+            </div>
+
+            <div class="fundo-imagem-rolagem-1" id="melhor-4">
+                <img class="imagem-rolagem-1" id="imagem-melhor-4">
+            </div>
+
+            <div class="fundo-imagem-rolagem-1" id="melhor-4">
+                <img class="imagem-rolagem-1" id="imagem-melhor-4">
+            </div>
+        </div>
+    </section>
+
+    <footer class="rodape-1">
+            <div class="lado-esquerdo-rodape-1">
+                <h2>Logo</h2>
+                <p>©2022, All right reserved.</p>
+            </div>
+            <div class="lado-direito-rodape-1">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/b1bb0593f9.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</body>
+</html>
