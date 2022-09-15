@@ -18,6 +18,7 @@ public class Cupom extends EntidadeBasica{
 		this.dataCriacao = dataCriacao;
 		this.dataExpiracao = dataExpiracao;
 	}
+	
 	public String getCodigoCupom() {
 		return codigoCupom;
 	}
