@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/historico.css">
+
 </head>
 <body>
     <script>
         var ponteiro = 0
         var ultimoValue = 0
         var widget = ""
+        
         function clicar(name){
             widget = name
             ponteiro = event.pageX
@@ -44,13 +47,13 @@
 
         <div id="usuario">
             <i class="fa-regular fa-bell fa-xl" id="widget"></i>
-            <i class="fa-regular fa-heart fa-xl" style="--fa-primary-color: red;" id="widget"></i>
-            <i class="fa-solid fa-clock-rotate-left fa-xl" style="--fa-primary-color: red;" id="widget"></i>
+            <i class="fa-regular fa-heart fa-xl" style="--fa-primary-color: red;" id="widget2"></i>
+            <i class="fa-solid fa-clock-rotate-left fa-xl" style="--fa-primary-color: red;" id="widget3" onclick="window.location.href = 'historico.html'"></i>
             <span id="texto-cabecalho">
-                <p>Clique para</p>
-                <p>fazer Login</p>
+                <p><a href="login.html">Clique para</a></p>
+                <p><a href="login.html">Fazer Login</a></p>
             </span>
-            <img src="download.jfif" alt="">
+            <img src="images/imgUser.png" alt="" onclick="window.location.href = 'login.html'">
         </div>
     </header>
     
@@ -192,7 +195,5 @@
     </footer>
 
     <script src="https://kit.fontawesome.com/b1bb0593f9.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </body>
 </html>

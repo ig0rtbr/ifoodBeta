@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/historico.css">
+
+    <title>Historico</title>
+</head>
+<body>
+    <header class="cabecalho-pagina">
+        <div class="logo">
+            <h1>LOGO</h1>
+        </div>
+
+        <div id="usuario">
+            <i class="fa-regular fa-bell fa-xl" id="widget"></i>
+            <i class="fa-regular fa-heart fa-xl" id="widget2"></i>
+            <i class="fa-solid fa-clock-rotate-left fa-xl" style="--fa-primary-color: red;" id="widget3" onclick="window.location.href = 'historico.html'"></i>
+            <span id="texto-cabecalho">
+                <p><a href="login.html">Clique para</a></p>
+                <p><a href="login.html">Fazer Login</a></p>
+            </span>
+            <img src="images/imgUser.png" alt="" onclick="window.location.href = 'login.html'">
+        </div>
+    </header>
+
+    <section class="texto">
+        <h1>Historico de pedidos</h1>
+        <h2>Confira os seus pedidos feitos, seja um dia ou</h2>
+    </section>
+
+    <section class="filtros">
+        <input type="month" name="" value="2022-08" min="2022-08"  id="input-mes" step="0"> 
+        <select name="" id="select" val value="i">
+            <option value="teste">Decrescente</option>
+        </select>
+        <label for="select">
+        </label>
+    </section>
+
+    <section id="pedidos">
+
+        <div id="pedidoUm" class="fundo-pedidos">
+            <div class="pedido">
+            <h1> <img src="" alt="">Pedido Concluido <br><a>1x Hamburguer galalau</a></h1>
+            </div>
+            <div class="refazer-pedido">
+                <button>Refazer</button>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://kit.fontawesome.com/b1bb0593f9.js" crossorigin="anonymous"></script>
+</body>
+</html>
