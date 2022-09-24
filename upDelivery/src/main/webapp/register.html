@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/register.css">
+    <title>Pagina Registro</title>
+</head>
+<body>
+    <script>
+        var email = "asda"
+        var cpf;
+        var nome;
+        var senha;
+        var endereco;
+        var bairro;
+        var numero;
+        var cep;
+
+        function criarUsuario1(){
+            var campoUm = document.getElementById("campoUm");
+            var campoDois = document.getElementById("campoDois");
+            var campoTres = document.getElementById("campoTres");
+            var campoQuatro = document.getElementById("campoQuatro");
+            var prox = document.getElementById("prox");
+            if (campoUm.value != "" && campoDois.value != "" && campoTres.value != "" && campoQuatro.value != ""){
+                let IC = isCPF(campoTres.value, campoTres.id);
+                let IM = isEmail(campoUm.value, campoUm.id);
+                if (IC == true && IM == true){
+                    email = campoUm.value
+                    nome = campoUm.value
+                    cpf = campoUm.value
+                    senha = campoUm.value
+
+                    
+                    campoUm.value = ""
+                    campoDois.value = ""                
+                    campoTres.value = ""                
+                    campoQuatro.value = ""   
+
+                    campoUm.placeholder = "Digite seu endereço"      
+                    campoDois.placeholder = "Numero da casa"                
+                    campoTres.placeholder = "Bairro"                
+                    campoQuatro.placeholder = "Numero do CEP"   
+                    
+                    prox.setAttribute("onclick", "criarUsuario2()")
+                }
+            
+
+
+
+            
+            }else{
+                if (campoUm.value == "")criarErro(campoUm.id, "Campo Obrigatorio")
+                if (campoDois.value == "")criarErro(campoDois.id, "Campo Obrigatorio")
+                if (campoTres.value == "")criarErro(campoTres.id, "Campo Obrigatorio")
+                if (campoQuatro.value == "")criarErro(campoQuatro.id, "Campo Obrigatorio")
+            }
+        }
+
+        function criarUsuario2(){
+            var campoUm = document.getElementById("campoUm");
+            var campoDois = document.getElementById("campoDois");
+            var campoTres = document.getElementById("campoTres");
+            var campoQuatro = document.getElementById("campoQuatro");
+            var prox = document.getElementById("prox");
+
+            if (campoUm.value != "" && campoDois.value != "" && campoTres.value != "" && campoQuatro.value != ""){
+                endereco = campoUm.value
+                numero = campoUm.value
+                bairro = campoUm.value
+                cep = campoUm.value
+                finalizarCadastro()
+
+            }else{
+                if (campoUm.value == "") criarErro(campoUm.id, campoUm.placeholder)
+                if (campoDois.value == "") criarErro(campoDois.id, campoDois.placeholder)
+                if (campoTres.value == "") criarErro(campoTres.id, campoTres.placeholder)
+                if (campoQuatro.value == "") criarErro(campoQuatro.id, campoQuatro.placeholder)
+            }
+        }
+
+        function finalizarCadastro(){
+            window.location.href = "login.html"
+        }
+
+        function isCPF(cpf, campo){
+            cpf = cpf.replace(/\.|-/g, "")
+
+            soma = 0
+            soma += cpf[0] * 10;
+            soma += cpf[1] * 9;
+            soma += cpf[2] * 8;
+            soma += cpf[3] * 7;
+            soma += cpf[4] * 6;
+            soma += cpf[5] * 5;
+            soma += cpf[6] * 4;
+            soma += cpf[7] * 3;
+            soma += cpf[8] * 2;
+            soma = (soma * 10) % 11;
+            if(soma ==10 || soma == 11) soma = 0;
+            if (soma != cpf[9]){
+                criarErro(campo, "CPF Invalido")
+                return false;
+            }
+
+
+            soma = 0
+            soma += cpf[0] * 11;
+            soma += cpf[1] * 10;
+            soma += cpf[2] * 9;
+            soma += cpf[3] * 8;
+            soma += cpf[4] * 7;
+            soma += cpf[5] * 6;
+            soma += cpf[6] * 5;
+            soma += cpf[7] * 4;
+            soma += cpf[8] * 3;
+            soma += cpf[9] * 2;
+            soma = (soma * 10) % 11;
+            if(soma ==10 || soma == 11) soma = 0;
+
+            if (soma != cpf[10]){
+                criarErro(campo, "CPF Invalido")
+                return false;
+            } 
+
+            return true;
+        }
+
+        function isEmail(value, campo){
+            let emailPattern = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+            if (emailPattern.test(value) == true){
+                return true
+            }else{
+                criarErro(campo, "Email Invalido")
+                return false
+            }
+        }
+
+        function criarErro(nome, nomeErro){
+
+            var campo = document.getElementById(nome);
+            campo.value = ""
+            campo.className = "campoErro"
+            campo.setAttribute("onclick", `colocarAntigoPlace('${campo.id}', '${campo.placeholder}')`)
+            campo.placeholder = nomeErro
+            campo.style.place = "red" 
+        }
+
+        function colocarAntigoPlace(name, value){
+            var campo = document.getElementById(name);
+            campo.placeholder = value
+            campo.className = "campos"
+
+        }
+
+
+    </script>
+    <div class="fundo">
+        <span class="textos">
+            <h1 class="logo">Logo</h1>
+            <h1 class="titulo">Bem Vindo<br>ao melhor app de delivery</h1>
+        </span>
+
+        <img src="images/Saly-1.png" alt="" class="picture-fundo">
+    </div>
+    <div class="informacoes-fundo">
+        <h1 class="bemvindo">Bem vindo ao <b>Sday</b></h1>
+        <h3 class="registrar"><a href="login.html">Possui Conta?<br>Entre</a></h3>
+        <h2 class="entre">Registrar</h2>
+            <input type="text" name="" id="campoUm" class="campos" placeholder="Digite seu Email">
+            <input type="text" name="" id="campoDois" class="campos" placeholder="Digite seu nome">
+            <input type="text" name="" id="campoTres" class="campos" placeholder="Digite seu CPF">
+
+            <input type="password" name="" id="campoQuatro" class="campos" placeholder="Digite sua Senha">
+            
+            <img src="images/seta.png" alt="" id="prox" onclick="criarUsuario1()">
+
+
+    </div>
+
+    <script src="https://kit.fontawesome.com/b1bb0593f9.js" crossorigin="anonymous"></script>
+</body>
+</html>

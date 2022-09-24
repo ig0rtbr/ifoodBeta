@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+
+a{
+    text-decoration: none;
+    color: black;
+
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+	user-select: none;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    color: #fff;
+    background: rgb(1,3,38);
+    background: linear-gradient(180deg, rgba(1,3,38,1) 35%, rgba(9,9,121,1) 70%, rgb(9,9,121) 100%);
+}
+
+.fundo{
+    background-color: #010326;
+    width: 100%;
+    height: 50vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+img{
+    margin: 0;
+    padding: 0;
+    margin-left: -8%;
+}
+
+.textos{
+    width: auto;
+    width: 40%;
+    height: 100%;
+}
+
+h1.logo a{
+    color: #fff;
+}
+
+h1.logo{
+    padding: 2%;
+}
+
+h1.titulo{
+    padding: 10%;
+    margin-top: 5%;
+
+}
+
+/* Login */
+
+.informacoes-fundo{
+    background-color: #fff;
+    border-radius: 45px;
+    border: #010326 1px solid;
+    width: 100%;
+    height: 80vh;
+    margin-top: -40vh;
+    margin-left: 60%;
+    position: fixed;
+    color: black;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: 20%;
+    min-width: 420px;
+    max-width: 470px;
+    min-height: 448px;
+    max-height: 470px;
+}
+
+.bemvindo{
+    font-size: 1.4rem;
+    margin-left: 20%;
+    margin-top: 20%;
+    width: 100%;
+    height: 1.6rem;
+}
+
+.registrar{
+    font-size: .8rem;
+    text-align: right;
+    margin-right: 20%;
+    margin-top: 20%;
+}
+
+.entre{
+    margin-left: 10%;
+    font-size: 3rem;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    margin-top: 0;
+}
+
+.metodo-login{
+    transition: 1s;
+    filter: grayscale(100%);
+    width: 100%;
+}
+
+.campos, .campoErro{
+    transition: .2s;
+    width: 80%;
+    height: 40%;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    border: 1px solid gray;
+    border-radius: 15px;
+    margin-top: -23%;
+    margin-left: 10%;
+
+}
+
+.campoErro::placeholder{
+    color: red;
+}
+
+#campoUm{
+    grid-row-start: 4;
+    grid-row-end: 4;
+}
+
+#campoDois{
+    grid-column-start: 1;
+    grid-row-start: 5;
+    grid-row-end: 5;
+    width: 35%;
+    margin-top: -30%;
+}
+
+#campoTres{
+    grid-column-start: 1;
+    grid-row-start: 5;
+    grid-row-end: 5;
+    width: 35%;
+    margin-top: -30%;
+    margin-left: 55%;
+}
+
+#campoQuatro{
+    margin-top: -15%;
+    grid-row-start: 6;
+    grid-row-end: 6;
+    margin-top: -35%;
+
+}
+
+#prox{
+    transition: .5s;
+    background-color: #010326;
+    color: #fff;
+    border-radius: 40px;
+    margin-top: -20%;
+    width: fit-content;
+    height: 40%;
+    grid-row-start: 7;
+    grid-row-end: 7;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    margin-top: -40%;
+    margin-left: 83%;
+}
+
+#prox:hover{
+    cursor: pointer;
+    transition: 1s;
+    background-color: #0a11a5;
+}
+
+#logar:hover{
+    cursor: pointer;
+    transition: .5s;
+    margin-left: 17.5%;    
+    width: 65%;
+    height: 45%;
+    color: #4285F4;
+    font-weight: bolder;
+}
+
+.campos:focus, .campos:hover{
+    cursor: pointer;
+    transition: .2s;
+    outline: 2px solid #4285F4;
+}
+
+
+
+.campos:focus::placeholder{
+    color: gray;
+    
+}
